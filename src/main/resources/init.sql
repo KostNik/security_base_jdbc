@@ -5,7 +5,7 @@
     
     create table users(
 		username varchar_ignorecase(50) not null primary key,
-		password varchar_ignorecase(50) not null,
+		password varchar_ignorecase(256) not null,
 		enabled boolean not null
 	);
 	
@@ -68,11 +68,11 @@
         references AUTO_USER;
 
     alter table SERVICES 
-        add constraint FK_e1e9lupq7o7mwsgtbkwd6uivn 
+        add constraint FK_e1e9lupq7o7mwsgtbkwd6uivn
         foreign key (APPOINTMENT_ID) 
         references APPOINTMENT;
 
-insert into users(username, password, enabled) values ('nuser', 'password', 1);
+insert into users(username, password, enabled) values ('nuser', 'a3057885dc34b6f63948fc01a48aaf299e0d964f366fec813f100a56411af92e525d84b5703e8b96', 1);
 insert into users(username, password, enabled) values ('auser', 'password', 1);
 
 insert into groups(id, group_name) VALUES (1, 'Admins');

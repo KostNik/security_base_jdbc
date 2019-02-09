@@ -41,7 +41,11 @@
                                         and
                                         g.id = gm.group_id"
             />
+            <!--<security:password-encoder hash="sha-256"/>-->
+            <security:password-encoder ref="passwordEncoder"/>
         </security:authentication-provider>
     </security:authentication-manager>
+
+    <bean id="passwordEncoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder"/>
 
 </beans>
